@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -22,3 +24,7 @@ $router->post('posts', 'PostController@store');
 $router->get('posts/{id}', 'PostController@show');
 $router->put('posts/{id}', 'PostController@update');
 $router->delete('posts/{id}', 'PostController@destroy');
+
+$router->get('/key', function () {
+    return Str::random(32);
+});
